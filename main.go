@@ -3,7 +3,9 @@ package main
 import (
 	api "go_server/api"
 	middleware "go_server/middleware"
+
 	"github.com/gin-gonic/gin"
+
 )
 
 var router *gin.Engine
@@ -18,6 +20,14 @@ func main() {
 	router.Use(middleware.Cors())
 
 	router.GET("/set", api.Setting, middleware.MiddleToken)
+
+	router.GET("/captcha", api.Captcha)
+	router.GET("/getCaptcha", api.GetCaptcha)
+	router.GET("/verify", api.Verify)
+
+	
+
 	router.Run(":8080") // 监听并在 0.0.0.0:8080 上启动服务
 }
+
 
