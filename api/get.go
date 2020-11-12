@@ -19,6 +19,12 @@ func Ping(c *gin.Context) {
 		"message": "成功",
 	})
 }
+// 实验数据接口2
+func Pings(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"message": "成功2",
+	})
+}
 
 // get请求
 func Welcome(c *gin.Context) {

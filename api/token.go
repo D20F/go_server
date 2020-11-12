@@ -10,10 +10,10 @@ import (
 )
 
 // 颁发token
-func Setting(ctx *gin.Context) {
+func GetToken(ctx *gin.Context) {
 	expireTime := time.Now().Add(7 * 24 * time.Hour)
 	claims := &config.Claims{
-		UserId:   2,
+		UserId:   1,
 		UserName: "哇嗷",
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expireTime.Unix(), //过期时间

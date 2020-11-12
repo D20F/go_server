@@ -15,7 +15,6 @@ type CaptchaResponse struct {
 	ImageUrl  string `json:"imageUrl"`  //验证码图片url
 }
  
- 
 func Captcha(c *gin.Context) {
 	length := captcha.DefaultLen
 	captchaId := captcha.NewLen(length)
